@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.LO CAFE — Specialty Coffee & Guatemalan Roots • Ridgewood, NY</title>
+  <meta name="description" content="Single-origin Guatemalan coffee, signature Horchata lattes, and fresh Latin breakfast in Ridgewood, Queens.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Progress Line -->
+  <div id="scroll-progress-line" class="scroll-progress-line"></div>
+
+  <!-- FULL-WIDTH EDGE-TO-EDGE LUXURY NAVIGATION BAR -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" onclick="MorphEngine.scrollToChapter(0); return false;" aria-label="C.Lo Cafe Home">
+        <div class="brand-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+            <line x1="6" y1="2" x2="6" y2="4"/>
+            <line x1="10" y1="2" x2="10" y2="4"/>
+            <line x1="14" y1="2" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">C.LO <span>CAFE</span></div>
+          <span class="brand-sub">Ridgewood • Queens, NYC</span>
+        </div>
+      </a>
+
+      <!-- Clean Navigation Links -->
+      <ul class="nav-links">
+        <li><button class="nav-link-btn" onclick="MorphEngine.scrollToChapter(0)">Story</button></li>
+        <li><button class="nav-link-btn" onclick="MorphEngine.scrollToChapter(2)">Craft</button></li>
+        <li><a href="#menu-showcase" class="nav-link-btn">Menu</a></li>
+        <li><a href="#visit-hours" class="nav-link-btn">Hours & Location</a></li>
+      </ul>
+
+      <!-- Action Items: Minimal Audio Toggle + Visit CTA -->
+      <div class="header-actions">
+        <!-- Minimal Sound Toggle Button -->
+        <button id="sound-btn" class="sound-toggle-btn" onclick="AmbientAudio.toggle()" title="Toggle Cafe Atmosphere Sound" aria-label="Toggle Sound">
+          <div class="eq-bars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+        </button>
+
+        <!-- Visit Button -->
+        <a href="#visit-hours" class="btn-primary">Visit Us</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- STICKY SCROLL CONTAINER (STAYS STATIC IN VIEWPORT AS YOU SCROLL) -->
+  <div id="sequence-scroll-container" class="sequence-scroll-container">
+    
+    <div id="sequence-sticky-stage" class="sequence-sticky-stage">
+      
+      <!-- Fullscreen WebGL Morph Canvas Background -->
+      <div id="viewport-canvas-wrapper" aria-hidden="true">
+        <canvas id="morph-canvas"></canvas>
+      </div>
+
+      <!-- Side Scrubber Dots -->
+      <aside class="side-scrubber-dots" aria-label="Story Chapters">
+        <button class="scrubber-dot active" onclick="MorphEngine.scrollToChapter(0)" title="01. Sunlit Morning" aria-label="Frame 1"></button>
+        <button class="scrubber-dot" onclick="MorphEngine.scrollToChapter(1)" title="02. Volcanic Harvest" aria-label="Frame 2"></button>
+        <button class="scrubber-dot" onclick="MorphEngine.scrollToChapter(2)" title="03. Fresh Espresso" aria-label="Frame 3"></button>
+        <button class="scrubber-dot" onclick="MorphEngine.scrollToChapter(3)" title="04. Steamed Milk" aria-label="Frame 4"></button>
+        <button class="scrubber-dot" onclick="MorphEngine.scrollToChapter(4)" title="05. Signature Horchata" aria-label="Frame 5"></button>
+        <button class="scrubber-dot" onclick="MorphEngine.scrollToChapter(5)" title="06. Ridgewood Cafe" aria-label="Frame 6"></button>
+      </aside>
+
+      <!-- Floating Interactive Story Card (Transitions in Place on Scroll with Micro-motion) -->
+      <div class="hero-overlay-container">
+        <div id="interactive-story-card" class="interactive-story-card">
+          
+          <!-- Card Header with Tag & Dash Progress -->
+          <div class="card-top-row card-anim-tag">
+            <div class="chapter-tag">
+              <span id="card-step">01</span>
+              <span class="dot"></span>
+              <span id="card-tag">Single-Origin Coffee</span>
+            </div>
+            <div id="card-dash-progress" class="card-dash-progress" aria-label="Chapter progress">
+              <span class="dash-pip active"></span>
+              <span class="dash-pip"></span>
+              <span class="dash-pip"></span>
+              <span class="dash-pip"></span>
+              <span class="dash-pip"></span>
+              <span class="dash-pip"></span>
+            </div>
+          </div>
+
+          <!-- Staggered Title -->
+          <div class="card-anim-title">
+            <h1 id="card-title" class="section-heading">Morning Light</h1>
+          </div>
+
+          <!-- Staggered Subtitle -->
+          <div class="card-anim-sub">
+            <p id="card-sub" class="section-desc">
+              Shade-grown Guatemalan beans, roasted fresh and brewed in Ridgewood.
+            </p>
+          </div>
+
+          <!-- Staggered Pills -->
+          <div class="pill-list card-anim-pills">
+            <span id="card-pill-1" class="pill-item">1,800m Elevation</span>
+            <span id="card-pill-2" class="pill-item">Guatemala Roots</span>
+          </div>
+
+          <!-- Staggered Actions -->
+          <div class="card-anim-actions" style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <button id="card-action-btn" class="btn-primary">
+              Next Stage →
+            </button>
+            <a href="#menu-showcase" class="btn-secondary">
+              Skip to Menu ↓
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Chapter Step Controls (Bottom Right) -->
+      <div class="stage-nav-controller">
+        <button class="ctrl-btn" onclick="MorphEngine.scrollToChapter(MorphEngine.getCurrentChapter() - 1)" title="Previous chapter" aria-label="Previous Chapter">‹</button>
+        <div class="scroll-hint-pill">
+          <span>Scroll down to explore ▾</span>
+        </div>
+        <button class="ctrl-btn" onclick="MorphEngine.scrollToChapter(MorphEngine.getCurrentChapter() + 1)" title="Next chapter" aria-label="Next Chapter">›</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MENU SHOWCASE SECTION (FOLLOWS DIRECTLY AFTER SEQUENCE) -->
+  <section id="menu-showcase" class="menu-showcase-section">
+    <div class="menu-container">
+      
+      <div class="section-header-center">
+        <div class="chapter-tag" style="margin-bottom: 1rem;">
+          <span>Fresh Every Day</span>
+        </div>
+        <h2 class="section-heading">Specialty Coffee <br><em>& Latin Kitchen Menu</em></h2>
+        <p class="section-desc">
+          Crafted with care in Ridgewood. Made from single-origin beans and freshly prepared kitchen ingredients.
+        </p>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid">
+
+        <!-- Item 1: Horchata Latte -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/horchata_latte.jpg" alt="Signature Horchata Latte" loading="lazy">
+            <span class="menu-card-tag">House Signature</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Horchata Latte</h3>
+              <span class="menu-card-price">$6.50</span>
+            </div>
+            <p class="menu-card-desc">
+              House-made spiced cinnamon rice milk combined with a rich double shot of Guatemalan espresso. Served iced or hot.
+            </p>
+            <div class="menu-card-footer">
+              <span>Espresso Bar</span>
+              <span>Iced / Hot</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Matcha Horchata -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/matcha_horchata.jpg" alt="Ceremonial Matcha Horchata" loading="lazy">
+            <span class="menu-card-tag">Popular</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Matcha Horchata</h3>
+              <span class="menu-card-price">$6.75</span>
+            </div>
+            <p class="menu-card-desc">
+              Ceremonial grade Japanese Uji matcha whisked over our signature house horchata with gentle vanilla and cinnamon.
+            </p>
+            <div class="menu-card-footer">
+              <span>Tea & Matcha</span>
+              <span>Smooth & Earthy</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Cardamom Cold Brew -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/cardamom_cold_brew.jpg" alt="Cardamom Cold Brew" loading="lazy">
+            <span class="menu-card-tag">18-Hour Brew</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Cardamom Cold Brew</h3>
+              <span class="menu-card-price">$5.75</span>
+            </div>
+            <p class="menu-card-desc">
+              Slow steep single-origin Huehuetenango cold brew infused with crushed green cardamom pods and raw cane sugar.
+            </p>
+            <div class="menu-card-footer">
+              <span>Cold Brew</span>
+              <span>Crisp & Aromatic</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Chapin Wrap -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/chapin_wrap.jpg" alt="Chapin Breakfast Wrap" loading="lazy">
+            <span class="menu-card-tag">Kitchen Fresh</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Chapin Breakfast Wrap</h3>
+              <span class="menu-card-price">$9.50</span>
+            </div>
+            <p class="menu-card-desc">
+              Scrambled pasture eggs, seasoned black beans, ripe avocado, queso fresco, and mild house salsa in a warm toasted tortilla.
+            </p>
+            <div class="menu-card-footer">
+              <span>Breakfast & Brunch</span>
+              <span>Warm & Filling</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5: Tocino Sandwich -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/tocino_sandwich.jpg" alt="Tocino Breakfast Sandwich" loading="lazy">
+            <span class="menu-card-tag">Chef Choice</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Tocino Sandwich</h3>
+              <span class="menu-card-price">$10.50</span>
+            </div>
+            <p class="menu-card-desc">
+              Sweet cured glazed bacon, fried egg, melted pepper jack cheese, and garlic cilantro aioli on a toasted brioche bun.
+            </p>
+            <div class="menu-card-footer">
+              <span>Breakfast & Brunch</span>
+              <span>Savory & Sweet</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6: Homemade Tres Leches -->
+        <article class="menu-card">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/tres_leches.jpg" alt="Homemade Tres Leches Cake" loading="lazy">
+            <span class="menu-card-tag">Bakery</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Tres Leches Cake</h3>
+              <span class="menu-card-price">$6.00</span>
+            </div>
+            <p class="menu-card-desc">
+              Light sponge cake soaked in three sweet milks, topped with freshly whipped cream and a sprinkle of cinnamon.
+            </p>
+            <div class="menu-card-footer">
+              <span>Bakery & Sweets</span>
+              <span>Made In-House</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VISIT & HOURS SECTION -->
+  <section id="visit-hours" class="visit-section">
+    <div class="visit-grid">
+      
+      <!-- Info Left -->
+      <div class="visit-info-card">
+        <div class="chapter-tag" style="margin-bottom: 1rem;">
+          <span>Find Us in Ridgewood</span>
+        </div>
+        <h2 class="section-heading" style="font-size: 2.25rem;">Visit C.Lo Cafe</h2>
+        <p class="section-desc">
+          We are located on Fairview Avenue in Ridgewood, Queens. Stop by for your morning espresso, afternoon work session, or to grab pastries to go.
+        </p>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-title">Address</div>
+            <div class="info-content">6-60 Fairview Ave, Ridgewood, NY 11385</div>
+            <div class="info-sub">Corner of Fairview Ave & Gates Ave</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">⏱</div>
+          <div>
+            <div class="info-title">Hours of Operation</div>
+            <div class="info-content">Monday – Sunday: 7:00 AM – 7:00 PM</div>
+            <div class="info-sub">Open 7 Days a week including holidays</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🚇</div>
+          <div>
+            <div class="info-title">Subway Directions</div>
+            <div class="info-content">M Train to Forest Ave or L Train to Halsey St</div>
+            <div class="info-sub">5–7 minute walk from either station</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://maps.google.com/?q=6-60+Fairview+Ave+Ridgewood+NY" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Open in Google Maps ↗
+          </a>
+          <button class="btn-secondary" onclick="MorphEngine.scrollToChapter(0)">
+            Back to Story ↑
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Feature Box Right -->
+      <div class="visit-info-card" style="background: var(--bg-main);">
+        <div class="chapter-tag" style="margin-bottom: 1rem;">
+          <span>Cafe Amenities</span>
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-primary);">
+          What to Expect
+        </h3>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+          <li style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--accent-caramel); font-size: 1.1rem;">✓</span>
+            <span>High-speed Wi-Fi & seating for laptop work</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--accent-caramel); font-size: 1.1rem;">✓</span>
+            <span>Outdoor garden patio seating (dog friendly)</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--accent-caramel); font-size: 1.1rem;">✓</span>
+            <span>Dairy-free & plant-based milk options available</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--accent-caramel); font-size: 1.1rem;">✓</span>
+            <span>Fresh Latin breakfast & lunch served daily</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--accent-caramel); font-size: 1.1rem;">✓</span>
+            <span>Single-origin whole bean coffee bags for home brew</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="brand-title" style="color: #FFFFFF; font-size: 1.5rem;">
+        C.LO <span style="color: var(--accent-caramel);">CAFE</span>
+      </div>
+      <p style="font-size: 0.85rem; color: rgba(250, 246, 239, 0.7); max-width: 28rem;">
+        6-60 Fairview Ave, Ridgewood, NY 11385 • Crafted Guatemalan Coffee & Neighborhood Sanctuary.
+      </p>
+      <div class="footer-bottom">
+        &copy; 2026 C.Lo Cafe. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/morph.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
