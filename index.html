@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.LO CAFE — Specialty Coffee & Latin Kitchen • Ridgewood, Queens NYC</title>
+  <meta name="description" content="Single-origin Guatemalan coffee, signature Horchata lattes, and scratch Latin kitchen breakfast in Ridgewood, Queens. Direct trade specialty coffee.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Progress Line -->
+  <div id="scroll-progress-line" class="scroll-progress-line"></div>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-announcement-bar">
+    <div class="announcement-inner">
+      <div class="announcement-left">
+        <span class="status-live-dot"></span>
+        <span>Open Today: 7:00 AM – 7:00 PM</span>
+        <span class="divider-dot">•</span>
+        <span>6-60 Fairview Ave, Ridgewood, NY</span>
+      </div>
+      <div class="announcement-right">
+        <span>Direct Trade Guatemalan Single-Origin</span>
+        <span class="divider-dot">•</span>
+        <a href="tel:+17185550192" class="announcement-link">Call: (718) 555-0192</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL-WIDTH EDGE-TO-EDGE LUXURY NAVIGATION BAR -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" onclick="MorphEngine.goToChapter(0); window.scrollTo({top:0, behavior:'smooth'}); return false;" aria-label="C.Lo Cafe Home">
+        <div class="brand-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+            <line x1="6" y1="2" x2="6" y2="4"/>
+            <line x1="10" y1="2" x2="10" y2="4"/>
+            <line x1="14" y1="2" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">C.LO <span>CAFE</span></div>
+          <span class="brand-sub">Ridgewood • Queens, NYC</span>
+        </div>
+      </a>
+
+      <!-- Clean Navigation Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><button class="nav-link-btn" onclick="MorphEngine.goToChapter(0); window.scrollTo({top:0, behavior:'smooth'});">Our Story</button></li>
+          <li>
+            <a href="#special-offers" class="nav-link-btn nav-link-special">
+              Specials <span class="nav-badge-pill">20% OFF</span>
+            </a>
+          </li>
+          <li><a href="#menu-showcase" class="nav-link-btn">Menu</a></li>
+          <li><a href="#weekly-events" class="nav-link-btn">Weekly Events</a></li>
+          <li><a href="#experience" class="nav-link-btn">The Roastery</a></li>
+          <li><a href="#visit-hours" class="nav-link-btn">Hours & Location</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Items: Sound Toggle + Order Online CTA -->
+      <div class="header-actions">
+        <!-- Minimal Sound Toggle Button -->
+        <button id="sound-btn" class="sound-toggle-btn" onclick="AmbientAudio.toggle()" title="Toggle Cafe Atmosphere Sound" aria-label="Toggle Sound">
+          <div class="eq-bars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+        </button>
+
+        <!-- Order Online Button -->
+        <a href="#menu-showcase" class="btn-primary">
+          <span>Start Order</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION (CINEMATIC WEBGL BACKGROUND + EDITORIAL STORYTELLING) -->
+  <section id="hero-stage" class="hero-stage">
+    
+    <!-- Fullscreen WebGL Morph Canvas Background -->
+    <div id="viewport-canvas-wrapper" aria-hidden="true">
+      <canvas id="morph-canvas"></canvas>
+      <div class="canvas-ambient-gradient"></div>
+    </div>
+
+    <!-- Side Scrubber Dots -->
+    <aside class="side-scrubber-dots" aria-label="Story Chapters">
+      <button class="scrubber-dot active" onclick="MorphEngine.goToChapter(0)" title="01. Sunlit Morning" aria-label="Frame 1"></button>
+      <button class="scrubber-dot" onclick="MorphEngine.goToChapter(1)" title="02. Volcanic Harvest" aria-label="Frame 2"></button>
+      <button class="scrubber-dot" onclick="MorphEngine.goToChapter(2)" title="03. Fresh Espresso" aria-label="Frame 3"></button>
+      <button class="scrubber-dot" onclick="MorphEngine.goToChapter(3)" title="04. Steamed Milk" aria-label="Frame 4"></button>
+      <button class="scrubber-dot" onclick="MorphEngine.goToChapter(4)" title="05. Signature Horchata" aria-label="Frame 5"></button>
+      <button class="scrubber-dot" onclick="MorphEngine.goToChapter(5)" title="06. Ridgewood Cafe" aria-label="Frame 6"></button>
+    </aside>
+
+    <!-- Center Hero Content Container -->
+    <div class="hero-content-center">
+      
+      <!-- Top Tag Badge -->
+      <div class="hero-badge-tag">
+        <span class="badge-dot"></span>
+        <span id="hero-live-tag">Direct-Trade Guatemalan Specialty Coffee</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-main-title">
+        Ridgewood's Favorite Food <br>
+        <em>& Specialty Coffee</em>
+      </h1>
+
+      <!-- Description -->
+      <p class="hero-main-subtitle" id="hero-subtitle">
+        Shade-grown Guatemalan beans roasted to perfection, handcrafted horchata lattes, and scratch Latin kitchen breakfast served daily.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions-row">
+        <a href="#menu-showcase" class="btn-primary btn-hero-lg">
+          <span>Start Order</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#special-offers" class="btn-secondary btn-hero-lg">
+          <span>View 20% Off Specials</span>
+        </a>
+      </div>
+
+      <!-- Social Proof Rating -->
+      <div class="hero-rating-proof">
+        <div class="stars-row" aria-label="5 stars rating">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span><strong>4.9 / 5.0</strong> across 500+ verified neighborhood reviews</span>
+      </div>
+
+    </div>
+
+    <!-- Chapter Navigation Thumbnails Bar (Bottom) -->
+    <div class="hero-chapter-bar">
+      <div class="hero-chapter-thumbnails">
+        <button class="thumb-btn active" onclick="MorphEngine.goToChapter(0)">
+          <span class="thumb-num">01</span>
+          <span class="thumb-title">Roasting</span>
+        </button>
+        <button class="thumb-btn" onclick="MorphEngine.goToChapter(1)">
+          <span class="thumb-num">02</span>
+          <span class="thumb-title">Terroir</span>
+        </button>
+        <button class="thumb-btn" onclick="MorphEngine.goToChapter(2)">
+          <span class="thumb-num">03</span>
+          <span class="thumb-title">9-Bar Pull</span>
+        </button>
+        <button class="thumb-btn" onclick="MorphEngine.goToChapter(3)">
+          <span class="thumb-num">04</span>
+          <span class="thumb-title">Oat Pour</span>
+        </button>
+        <button class="thumb-btn" onclick="MorphEngine.goToChapter(4)">
+          <span class="thumb-num">05</span>
+          <span class="thumb-title">Horchata</span>
+        </button>
+        <button class="thumb-btn" onclick="MorphEngine.goToChapter(5)">
+          <span class="thumb-num">06</span>
+          <span class="thumb-title">Sanctuary</span>
+        </button>
+      </div>
+
+      <div class="stage-nav-controller">
+        <button class="ctrl-btn" onclick="MorphEngine.prevChapter()" title="Previous chapter" aria-label="Previous Chapter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <span id="stage-counter" class="stage-counter-text">01 / 06</span>
+        <button class="ctrl-btn" onclick="MorphEngine.nextChapter()" title="Next chapter" aria-label="Next Chapter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- QUICK CATEGORIES BAR -->
+  <section class="quick-category-bar">
+    <div class="quick-category-inner">
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('signature')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Signature Horchatas</span>
+      </a>
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('espresso')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Espresso Bar</span>
+      </a>
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('espresso')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Cold Brews</span>
+      </a>
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('kitchen')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Latin Kitchen & Wraps</span>
+      </a>
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('bakery')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Fresh Bakery</span>
+      </a>
+      <a href="#menu-showcase" class="quick-cat-item" onclick="AppUtils.filterMenu('all')">
+        <span class="quick-cat-dot"></span>
+        <span class="quick-cat-text">Whole Bean Bags</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURED SPECIAL OFFERS & DISCOUNT BANNERS -->
+  <section id="special-offers" class="special-offers-section">
+    <div class="offers-container">
+      
+      <div class="section-header-center">
+        <div class="chapter-tag">
+          <span class="tag-accent-line"></span>
+          <span>Limited-Time Specials & Perks</span>
+        </div>
+        <h2 class="section-heading">Featured Deals & Neighborhood Discounts</h2>
+        <p class="section-desc">
+          Show any of the promo codes below at checkout or apply them for online pickup to enjoy exclusive savings.
+        </p>
+      </div>
+
+      <!-- Two Large Featured Promo Banners (Inspire Cafe Style) -->
+      <div class="featured-promos-grid">
+
+        <!-- Promo Banner 1: 20% Off First Visit -->
+        <div class="promo-banner-card promo-banner-dark">
+          <div class="promo-banner-img">
+            <img src="assets/menu/horchata_latte.jpg" alt="Specialty Coffee & Horchata Special" loading="lazy">
+            <span class="promo-pill-tag">Welcome Perk</span>
+          </div>
+          <div class="promo-banner-content">
+            <div class="promo-badge-tag">20% OFF FIRST ORDER</div>
+            <h3 class="promo-title">First Visit Welcome Discount</h3>
+            <p class="promo-desc">
+              Experience the best of C.Lo Cafe. Enjoy 20% off all specialty coffee, signature horchatas, and Latin breakfast items.
+            </p>
+            <div class="promo-pricing-row">
+              <div class="price-block">
+                <span class="price-label">Sample Total</span>
+                <div class="price-values">
+                  <span class="original-price">$16.50</span>
+                  <span class="discount-price">$13.20</span>
+                </div>
+              </div>
+              <button class="btn-promo-action" onclick="AppUtils.copyCode('WELCOMECLO', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Code: WELCOMECLO</span>
+              </button>
+            </div>
+            <div class="promo-footnote">
+              <span>Valid for new guests • In-store & pickup</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Banner 2: Morning Commuter Bundle -->
+        <div class="promo-banner-card promo-banner-warm">
+          <div class="promo-banner-img">
+            <img src="assets/menu/chapin_wrap.jpg" alt="Morning Horchata and Breakfast Wrap" loading="lazy">
+            <span class="promo-pill-tag">Daily 7am–10:30am</span>
+          </div>
+          <div class="promo-banner-content">
+            <div class="promo-badge-tag">SAVE $2.50 DAILY</div>
+            <h3 class="promo-title">Horchata Latte & Breakfast Wrap</h3>
+            <p class="promo-desc">
+              Pair our signature spiced Horchata Latte with a warm Chapin Wrap or Tocino Sandwich every weekday morning.
+            </p>
+            <div class="promo-pricing-row">
+              <div class="price-block">
+                <span class="price-label">Bundle Price</span>
+                <div class="price-values">
+                  <span class="original-price">$16.00</span>
+                  <span class="discount-price">$13.50</span>
+                </div>
+              </div>
+              <button class="btn-promo-action" onclick="AppUtils.copyCode('HORCHATADUO', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Code: HORCHATADUO</span>
+              </button>
+            </div>
+            <div class="promo-footnote">
+              <span>Monday – Friday before 10:30 AM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SPECIALTY MENU SECTION ("FRESHLY PREPARED TO ORDER") -->
+  <section id="menu-showcase" class="menu-showcase-section">
+    <div class="menu-container">
+      
+      <div class="section-header-center">
+        <div class="chapter-tag">
+          <span class="tag-accent-line"></span>
+          <span>Crafted in Ridgewood</span>
+        </div>
+        <h2 class="section-heading">Freshly Prepared to Order</h2>
+        <p class="section-desc">
+          Crafted with 100% single-origin Guatemalan beans and freshly prepared scratch kitchen ingredients.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="menu-filter-bar" role="tablist">
+          <button class="filter-tab active" onclick="AppUtils.filterMenu('all', this)">All Items</button>
+          <button class="filter-tab" onclick="AppUtils.filterMenu('signature', this)">Signature Drinks</button>
+          <button class="filter-tab" onclick="AppUtils.filterMenu('espresso', this)">Espresso Bar</button>
+          <button class="filter-tab" onclick="AppUtils.filterMenu('kitchen', this)">Latin Kitchen</button>
+          <button class="filter-tab" onclick="AppUtils.filterMenu('bakery', this)">Fresh Bakery</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid (Inspire Cafe 3-Column Clean Card Layout) -->
+      <div class="menu-grid" id="menu-grid">
+
+        <!-- Item 1: Horchata Latte -->
+        <article class="menu-card" data-category="signature espresso">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/horchata_latte.jpg" alt="Signature Horchata Latte" loading="lazy">
+            <span class="menu-card-tag">House Signature</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Horchata Latte</h3>
+              <span class="menu-card-price">$6.50</span>
+            </div>
+            <p class="menu-card-desc">
+              House-made spiced cinnamon rice milk combined with a double shot of Guatemalan espresso. Served iced or hot.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Espresso Bar • Iced/Hot</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Horchata Latte', '$6.50')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Matcha Horchata -->
+        <article class="menu-card" data-category="signature">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/matcha_horchata.jpg" alt="Ceremonial Matcha Horchata" loading="lazy">
+            <span class="menu-card-tag">Popular</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Matcha Horchata</h3>
+              <span class="menu-card-price">$6.75</span>
+            </div>
+            <p class="menu-card-desc">
+              Ceremonial grade Japanese Uji matcha whisked over our signature house horchata with gentle vanilla and cinnamon.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Tea & Matcha • Smooth</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Matcha Horchata', '$6.75')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Cardamom Cold Brew -->
+        <article class="menu-card" data-category="espresso signature">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/cardamom_cold_brew.jpg" alt="Cardamom Cold Brew" loading="lazy">
+            <span class="menu-card-tag">18-Hour Steep</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Cardamom Cold Brew</h3>
+              <span class="menu-card-price">$5.75</span>
+            </div>
+            <p class="menu-card-desc">
+              Slow steep single-origin Huehuetenango cold brew infused with crushed green cardamom pods and raw cane sugar.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Cold Brew • Crisp & Aromatic</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Cardamom Cold Brew', '$5.75')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Chapin Wrap -->
+        <article class="menu-card" data-category="kitchen">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/chapin_wrap.jpg" alt="Chapin Breakfast Wrap" loading="lazy">
+            <span class="menu-card-tag">Kitchen Fresh</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Chapin Breakfast Wrap</h3>
+              <span class="menu-card-price">$9.50</span>
+            </div>
+            <p class="menu-card-desc">
+              Scrambled pasture eggs, seasoned black beans, ripe avocado, queso fresco, and mild house salsa in a warm toasted tortilla.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Latin Breakfast • Warm & Filling</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Chapin Breakfast Wrap', '$9.50')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5: Tocino Sandwich -->
+        <article class="menu-card" data-category="kitchen">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/tocino_sandwich.jpg" alt="Tocino Breakfast Sandwich" loading="lazy">
+            <span class="menu-card-tag">Chef Choice</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Tocino Sandwich</h3>
+              <span class="menu-card-price">$10.50</span>
+            </div>
+            <p class="menu-card-desc">
+              Sweet cured glazed bacon, fried pasture egg, melted pepper jack cheese, and garlic cilantro aioli on a toasted brioche bun.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Latin Breakfast • Savory & Sweet</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Tocino Sandwich', '$10.50')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6: Homemade Tres Leches -->
+        <article class="menu-card" data-category="bakery">
+          <div class="menu-card-img-wrap">
+            <img src="assets/menu/tres_leches.jpg" alt="Homemade Tres Leches Cake" loading="lazy">
+            <span class="menu-card-tag">Made In-House</span>
+            <span class="menu-card-discount-tag">20% Off Eligible</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Tres Leches Cake</h3>
+              <span class="menu-card-price">$6.00</span>
+            </div>
+            <p class="menu-card-desc">
+              Light sponge cake soaked in three sweet milks, topped with freshly whipped cream and a sprinkle of organic cinnamon.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-meta">Bakery • Sweet & Delicate</span>
+              <button class="btn-card-add" onclick="AppUtils.addToOrder('Tres Leches Cake', '$6.00')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- A WEEK AT C.LO CAFE (WEEKLY SPECIALS & COMMUNITY EVENTS) -->
+  <section id="weekly-events" class="weekly-events-section">
+    <div class="weekly-container">
+      
+      <div class="section-header-center">
+        <div class="chapter-tag">
+          <span class="tag-accent-line"></span>
+          <span>Weekly Rituals</span>
+        </div>
+        <h2 class="section-heading">A Week at C.Lo Cafe</h2>
+        <p class="section-desc">
+          Experience special neighborhood tastings, free roast refills, and live weekend patio sessions.
+        </p>
+      </div>
+
+      <div class="weekly-grid">
+        
+        <!-- Monday -->
+        <div class="weekly-card">
+          <div class="weekly-img-wrap">
+            <img src="assets/sequence/01_roast.jpg" alt="Coffee Monday Roasting Special" loading="lazy">
+            <span class="weekly-day-tag">Monday</span>
+          </div>
+          <div class="weekly-body">
+            <h3 class="weekly-title">Coffee Monday</h3>
+            <p class="weekly-desc">
+              Single-origin batch brew refills are complimentary with any Latin breakfast wrap or pastry purchase before 11:00 AM.
+            </p>
+            <a href="#special-offers" class="weekly-link">
+              <span>View Monday Offer</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Wednesday -->
+        <div class="weekly-card">
+          <div class="weekly-img-wrap">
+            <img src="assets/sequence/05_signature_cup.jpg" alt="Horchata Wednesday" loading="lazy">
+            <span class="weekly-day-tag">Wednesday</span>
+          </div>
+          <div class="weekly-body">
+            <h3 class="weekly-title">Horchata Midweek</h3>
+            <p class="weekly-desc">
+              Take $1.00 off all specialty iced Horchata Lattes and Matcha Horchatas all afternoon from 12:00 PM to 4:00 PM.
+            </p>
+            <a href="#menu-showcase" class="weekly-link">
+              <span>Explore Horchatas</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="weekly-card">
+          <div class="weekly-img-wrap">
+            <img src="assets/sequence/03_extract.jpg" alt="Espresso Flight Friday" loading="lazy">
+            <span class="weekly-day-tag">Friday</span>
+          </div>
+          <div class="weekly-body">
+            <h3 class="weekly-title">Espresso Tasting Flight</h3>
+            <p class="weekly-desc">
+              Taste our Guatemala Huehuetenango pulled two ways: traditional double shot + 1:1 cortado with steamed oat milk.
+            </p>
+            <a href="#experience" class="weekly-link">
+              <span>Learn About the Craft</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sunday -->
+        <div class="weekly-card">
+          <div class="weekly-img-wrap">
+            <img src="assets/sequence/06_served.jpg" alt="Garden Patio Brunch" loading="lazy">
+            <span class="weekly-day-tag">Sunday</span>
+          </div>
+          <div class="weekly-body">
+            <h3 class="weekly-title">Garden Patio Brunch</h3>
+            <p class="weekly-desc">
+              Full Latin scratch kitchen menu, fresh homemade Tres Leches cake, and sunny outdoor garden patio seating for the whole family.
+            </p>
+            <a href="#visit-hours" class="weekly-link">
+              <span>Reserve Table / Visit</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE C.LO EXPERIENCE & EDITORIAL QUOTE -->
+  <section id="experience" class="experience-section">
+    <div class="experience-container">
+      
+      <!-- Big Editorial Quote Banner (Endiro Reference Style) -->
+      <div class="experience-quote-block">
+        <span class="quote-mark">“</span>
+        <blockquote class="experience-quote">
+          You will never drink a cup of C.Lo coffee that has been produced through the exploitation of farmers or the environment. Direct trade, shade-grown, and roasted with dignity.
+        </blockquote>
+        <div class="quote-author">
+          <strong>C.LO CAFE DIRECT-TRADE ETHOS</strong>
+          <span>Huehuetenango Highlands, Guatemala • Ridgewood, Queens NYC</span>
+        </div>
+      </div>
+
+      <!-- Bento Photo Mosaic of the Experience -->
+      <div class="experience-bento-grid">
+        <div class="bento-item bento-large">
+          <img src="assets/sequence/01_roast.jpg" alt="Small batch roasting" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-tag">1,800m Volcanic Soil</span>
+            <h4 class="bento-title">High-Altitude Huehuetenango Beans</h4>
+          </div>
+        </div>
+        <div class="bento-item">
+          <img src="assets/sequence/03_extract.jpg" alt="9-bar espresso pull" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-tag">Synesso MVP</span>
+            <h4 class="bento-title">0.1g Dose Precision</h4>
+          </div>
+        </div>
+        <div class="bento-item">
+          <img src="assets/sequence/04_steam_pour.jpg" alt="Steamed oat milk pour" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-tag">Organic Oat Milk</span>
+            <h4 class="bento-title">Velvety Micro-Foam</h4>
+          </div>
+        </div>
+        <div class="bento-item bento-wide">
+          <img src="assets/sequence/06_served.jpg" alt="Ridgewood cafe seating" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-tag">Fairview Ave Sanctuary</span>
+            <h4 class="bento-title">Sunlit Garden Patio & Workspace</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS & COMMUNITY LOVE -->
+  <section id="reviews" class="reviews-section">
+    <div class="reviews-container">
+      <div class="section-header-center">
+        <div class="chapter-tag">
+          <span class="tag-accent-line"></span>
+          <span>Neighborhood Voices</span>
+        </div>
+        <h2 class="section-heading">Loved by Queens Locals & Coffee Critics</h2>
+        <p class="section-desc">
+          Rated 4.9 Stars on Google & Yelp with over 500+ neighborhood reviews.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "The Horchata Latte here is honestly the best specialty drink in Queens. The espresso is rich and bold, and the cinnamon rice milk is prepared from scratch daily. My morning ritual!"
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <strong>Mateo Rodriguez</strong>
+              <small>Ridgewood Local • Daily Regular</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "Such a warm and welcoming space. The garden patio out back is a true sanctuary for remote work, and their Chapin breakfast wrap is unmatched."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">SL</div>
+            <div>
+              <strong>Sarah Lin</strong>
+              <small>Bushwick / Ridgewood • Designer</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">
+            "Proper third-wave specialty coffee with authentic Guatemalan soul. The cardamom cold brew and tres leches cake are absolute perfection."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">DK</div>
+            <div>
+              <strong>David Klein</strong>
+              <small>Coffee Critic & Queens Resident</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT, LOCATION & DIRECTIONS SECTION -->
+  <section id="visit-hours" class="visit-section">
+    <div class="visit-container">
+      
+      <div class="visit-grid">
+        
+        <!-- Left: Location Info & Transit -->
+        <div class="visit-info-card">
+          <div class="chapter-tag">
+            <span class="status-live-dot"></span>
+            <span>Open Today: 7:00 AM – 7:00 PM</span>
+          </div>
+          <h2 class="section-heading" style="font-size: 2.25rem; margin-top: 0.75rem;">6-60 Fairview Ave, Ridgewood</h2>
+          <p class="section-desc">
+            Corner of Fairview Ave & Gates Ave in Ridgewood, Queens. Drop by for your morning espresso, lunch, or remote work.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="info-title">Location & Neighborhood</div>
+                <div class="info-content">6-60 Fairview Ave, Ridgewood, NY 11385</div>
+                <div class="info-sub">Queens, New York (Adjacent to Bushwick)</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="info-title">Operating Hours</div>
+                <div class="info-content">Monday – Sunday: 7:00 AM – 7:00 PM</div>
+                <div class="info-sub">Open 7 days a week, 365 days a year</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <div>
+                <div class="info-title">Subway Transit</div>
+                <div class="info-content">M Train to Forest Ave or L Train to Halsey St</div>
+                <div class="info-sub">5–7 minute easy walk from either subway stop</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="visit-actions">
+            <a href="https://maps.google.com/?q=6-60+Fairview+Ave+Ridgewood+NY" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <span>Open in Google Maps</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <button class="btn-secondary" onclick="MorphEngine.goToChapter(0); window.scrollTo({top:0, behavior:'smooth'});">
+              <span>Back to Top</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Map Preview & Amenities Card -->
+        <div class="visit-map-card">
+          <div class="map-graphic-box">
+            <div class="map-grid-overlay"></div>
+            <div class="map-marker-pin">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+              <div class="pin-label">C.Lo Cafe</div>
+            </div>
+            <div class="map-transit-pill">
+              <span>M Train (Forest Ave) • 400m</span>
+            </div>
+          </div>
+
+          <div class="amenities-box">
+            <h4 class="amenities-title">Cafe Features & Amenities</h4>
+            <div class="amenities-grid">
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>High-Speed Wi-Fi</span>
+              </div>
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Garden Patio Seating</span>
+              </div>
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Dog Friendly Outdoors</span>
+              </div>
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Oat & Almond Milks</span>
+              </div>
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Scratch Latin Kitchen</span>
+              </div>
+              <div class="amenity-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="amenity-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Whole Bean Retail</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIP CLUB & NEWSLETTER SECTION -->
+  <section class="vip-section">
+    <div class="vip-container">
+      <div class="vip-content">
+        <div class="chapter-tag" style="margin-bottom: 1rem;">
+          <span class="tag-accent-line"></span>
+          <span>Join the C.Lo Neighborhood Circle</span>
+        </div>
+        <h2 class="vip-heading">
+          Get 15% Off Your Next Cup <br>
+          <em>& Secret Seasonal Drops</em>
+        </h2>
+        <p class="vip-subtext">
+          Be the first to taste seasonal single-origin micro-lots, receive free birthday perks, and get exclusive weekend brunch specials.
+        </p>
+        <form class="vip-form" onsubmit="AppUtils.handleVipSignup(event)">
+          <input type="email" placeholder="Enter your email address..." required class="vip-input" id="vip-email">
+          <button type="submit" class="btn-primary" style="padding: 0.85rem 1.75rem;">
+            <span>Join the Circle</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST & CERTIFICATIONS BAR (Endiro Reference Style) -->
+  <div class="certifications-bar">
+    <div class="certifications-inner">
+      <div class="cert-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Single-Origin Guatemalan Arabica</span>
+      </div>
+      <div class="cert-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8M8 8l8 8"/></svg>
+        <span>Direct Trade & Fair Compensation</span>
+      </div>
+      <div class="cert-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Specialty Coffee Association Standards</span>
+      </div>
+      <div class="cert-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Proudly Serving Ridgewood, Queens</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPORATE LUXURY FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-row">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col footer-col-brand">
+          <div class="brand-title" style="color: #FFFFFF; font-size: 1.65rem;">
+            C.LO <span>CAFE</span>
+          </div>
+          <p class="footer-about-text">
+            Specialty coffee roastery and Latin scratch kitchen based in Ridgewood, Queens. Committed to direct trade sourcing from Guatemalan highlands.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Yelp" class="social-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Locations & Hours -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Locations & Hours</h4>
+          <p class="footer-col-text">
+            <strong>C.Lo Cafe Ridgewood</strong><br>
+            6-60 Fairview Ave<br>
+            Ridgewood, NY 11385
+          </p>
+          <p class="footer-col-text" style="margin-top: 0.5rem;">
+            <strong>Hours:</strong><br>
+            Monday – Sunday: 7am – 7pm
+          </p>
+        </div>
+
+        <!-- Col 3: Contact Us -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact Us</h4>
+          <p class="footer-col-text">
+            Phone: <a href="tel:+17185550192" style="color: inherit; text-decoration: none;">(718) 555-0192</a><br>
+            Email: <a href="mailto:hello@clocafe.nyc" style="color: inherit; text-decoration: none;">hello@clocafe.nyc</a>
+          </p>
+          <p class="footer-col-text" style="margin-top: 0.5rem;">
+            Wholesale inquiries:<br>
+            <a href="mailto:wholesale@clocafe.nyc" style="color: var(--accent-gold); text-decoration: none;">wholesale@clocafe.nyc</a>
+          </p>
+        </div>
+
+        <!-- Col 4: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#special-offers">Special Offers & Discounts</a></li>
+            <li><a href="#menu-showcase">Specialty Coffee & Menu</a></li>
+            <li><a href="#weekly-events">Weekly Specials & Events</a></li>
+            <li><a href="#experience">Direct Trade Story</a></li>
+            <li><a href="#visit-hours">Transit & Directions</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 C.Lo Cafe LLC. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+          <span>•</span>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/morph.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
